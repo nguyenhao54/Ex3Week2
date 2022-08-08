@@ -1,0 +1,16 @@
+<div id="bai3" class="container">
+  Bài 3: Viết một chương trình JavaScript chấp nhận một số làm đầu vào và chèn
+  dấu gạch ngang (-) vào giữa hai số chẵn. Ví dụ: 025468, đầu ra phải là
+  0-254-6-8.
+  <div>
+    <input
+      class="form-control"
+      type="number"
+      id="number"
+      placeholder="Enter string number"
+      [(ngModel)]="input"
+    />
+    <button (click)="convert()" class="btn">Convert</button>
+    <div id="output">Result: {{ output }}</div>
+  </div>
+</div>

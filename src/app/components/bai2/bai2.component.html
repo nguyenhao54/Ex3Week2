@@ -1,0 +1,71 @@
+<div id="bai2" class="container">
+  Bài 2. Có 2 dữ liệu đầu vào: - Input 1: chứa dữ liệu mã sinh viên, tên sinh
+  viên (cách nhau bằng dấu phẩy), 2 sinh viên cách nhau bằng dấu chấm phẩy, ví
+  dụ: "SV001, Nguyễn Văn A; SV003, Phạm Văn C; SV006, Nguyễn Văn D" - Input 2:
+  chứa dữ liệu mã sinh viên, Tỉnh/TP của sinh viên (cách nhau bằng dấu phẩy), 2
+  sinh viên cách nhau bằng dấu chấm phẩy, ví dụ: "SV001, Hà Nội; SV009, Đà nẵng;
+  SV003, Thái Bình; SV005, Cần thơ" Yêu cầu: 1. So khớp 2 dữ liệu đầu vào để
+  hiển thị dữ liệu theo các dòng, có đầy đủ mã sinh viên, họ tên và Tỉnh/TP, ví
+  dụ với 2 dữ liệu mẫu trên thì đầu ra hiển thị sẽ là: SV001, Nguyễn Văn A, Hà
+  Nội SV003, Phạm Văn C, Thái Bình 2. Hiển thị tổng số sinh viên và danh sách
+  sinh viên có ở Input 2 mà ko có ở Input 1 và có sắp xếp theo mã sinh viên tăng
+  dần, ví dụ với 2 dữ liệu mẫu trên thì đầu ra hiển thị sẽ là: - Tổng số sinh
+  viên và danh sách sinh viên có ở Input 2 mà ko có ở Input 1: 2 - Chi tiết:
+  SV005, Cần thơ SV009, Đà nẵng
+  <div>
+    <form>
+      <div style="margin-bottom: 10px">
+        <label for="input1">Input 1</label>
+        <input
+          class="form-control"
+          id="input1"
+          type="text"
+          name="input2"
+          [(ngModel)]="input1"
+        />
+      </div>
+      <div style="margin-bottom: 10px">
+        <label for="input2">Input 2</label>
+        <input
+          class="form-control"
+          id="input2"
+          type="text"
+          name="input2"
+          [(ngModel)]="input2"
+        />
+      </div>
+      <button
+        style="margin-bottom: 10px"
+        class="btn"
+        (click)="handleEvent($event)"
+      >
+        Check
+      </button>
+    </form>
+    <h3>Result1:</h3>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+      </tr>
+      <tr *ngFor="let matchedStudent of matchedStudents">
+        <td>{{ matchedStudent.code }}</td>
+        <td>{{ matchedStudent.name }}</td>
+        <td>{{ matchedStudent.address }}</td>
+      </tr>
+    </table>
+    <h3>Result2: {{ notMatchedStudents.length }}</h3>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Address</th>
+      </tr>
+      <tr *ngFor="let notMatchedStudent of notMatchedStudents">
+        <td>{{ notMatchedStudent.code }}</td>
+        <td>{{ notMatchedStudent.address }}</td>
+      </tr>
+    </table>
+    <span style="white-space: pre-line" id="detail"></span>
+  </div>
+</div>

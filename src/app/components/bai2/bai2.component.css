@@ -1,0 +1,12 @@
+tr {
+  display: flex;
+}
+td,
+th {
+  width: 230px;
+  text-align: center;
+}
+table {
+  border: 2px solid gray;
+  border-radius: 5px;
+}

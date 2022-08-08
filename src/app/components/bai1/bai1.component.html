@@ -1,0 +1,10 @@
+<div id="bai1" class="container">
+  <p>
+    Bài 1: Viết chương trình cho người dùng nhập vào số n lớn hơn 0, sau đó dựa
+    vào n tính giá trị của biểu thức: expres = 1/n + 2/n + 3/n + ... + n/n.
+  </p>
+  <input class="form-control" type="number" [(ngModel)]="input" />
+  <button (click)="calEx()" class="btn">Calculate</button>
+
+  <p>Result: {{ output }}</p>
+</div>
